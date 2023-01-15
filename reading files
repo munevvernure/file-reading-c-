@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main() {
+	fstream myFile;
+	/*
+	myFile.open("munevver.txt", ios::out); //write into a text file using c++
+	if (myFile.is_open()) {
+		myFile << "hello \n";
+		myFile << "i hope i can pass with a good score!\n";
+		myFile.close();
+	}
+	myFile.open("munevver.txt", ios::app);//append
+	if (myFile.is_open()) {
+		myFile << "Hello2\n";
+		myFile.close();
+	}
+	*/
+	myFile.open("munevver.txt", ios::in);//read
+	if (myFile.is_open()) {
+		string line;
+		while (getline(myFile, line)) {
+			cout << line << endl;
+		}
+		myFile.close();
+	}
+}
